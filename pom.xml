@@ -12,6 +12,7 @@
     <properties>
         <springframework.version>5.1.0.RELEASE</springframework.version>
         <springsecurity.version>5.1.0.RELEASE</springsecurity.version>
+        <hibernate.version>5.3.6.Final</hibernate.version>
 
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
@@ -19,14 +20,28 @@
 
     <dependencies>
 
-        <!-- Spring MVC support -->
+<!-- Spring Transactions -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-tx</artifactId>
+            <version>${springframework.version}</version>
+        </dependency>
+
+<!-- Spring ORM -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-orm</artifactId>
+            <version>${springframework.version}</version>
+        </dependency>
+
+<!-- Spring MVC support -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-webmvc</artifactId>
             <version>${springframework.version}</version>
         </dependency>
 
-        <!-- Spring Security support -->
+<!-- Spring Security support -->
         <!-- Spring Security Web + Spring Security Config -->
         <dependency>
             <groupId>org.springframework.security</groupId>
@@ -40,14 +55,28 @@
             <version>${springsecurity.version}</version>
         </dependency>
 
-        <!-- Spring security taglib support -->
+<!-- Hibernate Core -->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>${hibernate.version}</version>
+        </dependency>
+
+<!-- Hibernate Validator -->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-validator</artifactId>
+            <version>6.0.13.Final</version>
+        </dependency>
+
+<!-- Spring security taglib support -->
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-taglibs</artifactId>
             <version>${springsecurity.version}</version>
         </dependency>
 
-        <!-- MySQL Java connector support + c3p0 -->
+<!-- MySQL Java connector support + c3p0 -->
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
@@ -60,7 +89,7 @@
             <version>0.9.5.2</version>
         </dependency>
 
-        <!-- Servlet, JSP and JSTL support -->
+<!-- Servlet, JSP and JSTL support -->
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
